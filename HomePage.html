@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+
+<html lang="id">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+    <meta content="mobile_tab" name="shell-type"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-variant": "#e0e3e5", "inverse-surface": "#2d3133", "inverse-on-surface": "#eff1f3", "on-secondary": "#ffffff", "secondary-fixed": "#dbe1ff", "on-secondary-container": "#fefcff", "on-error": "#ffffff", "outline": "#767680", "on-secondary-fixed-variant": "#003ea8", "surface-container": "#eceef0", "on-surface-variant": "#45464f", "secondary-fixed-dim": "#b4c5ff", "secondary": "#0051d5", "on-tertiary": "#ffffff", "primary-fixed": "#dee0ff", "on-error-container": "#93000a", "on-tertiary-fixed": "#002114", "on-tertiary-container": "#26a476", "background": "#f7f9fb", "surface-bright": "#f7f9fb", "on-background": "#191c1e", "inverse-primary": "#bac3ff", "tertiary": "#001a0f", "on-secondary-fixed": "#00174b", "on-primary-fixed": "#0b164a", "on-surface": "#191c1e", "primary-container": "#1b2559", "surface-dim": "#d8dadc", "error": "#ba1a1a", "surface-container-high": "#e6e8ea", "on-primary-container": "#848dc8", "on-primary": "#ffffff", "surface": "#f7f9fb", "on-primary-fixed-variant": "#394378", "primary-fixed-dim": "#bac3ff", "outline-variant": "#c6c5d1", "secondary-container": "#316bf3", "surface-container-low": "#f2f4f6", "surface-container-highest": "#e0e3e5", "on-tertiary-fixed-variant": "#005137", "tertiary-container": "#003120", "surface-container-lowest": "#ffffff", "error-container": "#ffdad6", "tertiary-fixed-dim": "#68dba9", "surface-tint": "#515b92", "primary": "#030e44", "tertiary-fixed": "#85f8c4" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xl": "2rem", "space-sm": "0.5rem", "gutter": "1rem", "margin": "1rem", "space-md": "1rem", "space-xs": "0.25rem", "space-lg": "1.5rem" }, "fontFamily": { "label-sm": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"] }, "fontSize": { "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-lg": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }] } } } };</script>
+    <style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#f7f9fb;}body{overscroll-behavior:y none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style>
+    <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-surface text-on-surface min-h-screen flex flex-col antialiased selection:bg-secondary-fixed">
+<!-- Top App Bar with Multi-Jenjang & Multi-Profile Support -->
+<header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(27,37,89,0.05)] border-b border-surface-container-high/60">
+<div class="h-16 px-gutter flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0 flex-1">
+<div class="w-9 h-9 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[20px]">school</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-[15px] font-bold text-primary tracking-tight truncate">EduSphere</span>
+<span class="px-1.5 py-0.2 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-[10px] font-bold">K-12 &amp; PT</span>
+</div>
+<!-- Active School & Account Role Selector Button -->
+<button class="flex items-center gap-1 text-left bg-surface-container-high/70 hover:bg-surface-container-high px-2 py-0.5 rounded-full w-fit max-w-full transition-colors mt-0.5">
+<span class="material-symbols-outlined text-secondary text-xs shrink-0">assured_workload</span>
+<span class="font-label-sm text-[11px] text-on-surface truncate max-w-[130px]">SD Islam Terpadu Al-Azhar</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[14px] shrink-0">arrow_drop_down</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0">
+<button aria-label="Notifikasi Akademik" class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary hover:bg-surface-container relative transition-colors">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error ring-2 ring-surface"></span>
+</button>
+<!-- Parent/User Switch Avatar -->
+<div class="relative">
+<button class="w-10 h-10 rounded-full ring-2 ring-secondary/30 overflow-hidden flex items-center justify-center bg-surface-container-high focus:outline-none" title="Profil Orang Tua">
+<img alt="Foto Orang Tua" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaJ2ubcjUoqbw9Fgl46q_pprbVQDvgu6NRFY6UDUVlqxN9RLscN5W3__Qn_EDx5CcdHG9S1HAEsiencDVHHfE7gWOZpaJsqNL_OCmyxNtAeznp34tQ_iFEqIwVJ4znCvum0MQNoc6mIZw7qY9Zznp6cnToSJsyHvJDrXIVscqX0l_MYK9Gl2k1QJahcvrN_e-5VGPUmxPGpVeeNLB90KOf7d5ZmNiWiAMfDU6xJG__1HkYEbGHbE5Mog"/>
+</button>
+<span class="absolute -bottom-0.5 -right-0.5 bg-primary text-on-primary w-4 h-4 rounded-full flex items-center justify-center text-[9px] font-bold ring-1 ring-surface" title="Akun Orang Tua: Ayah">P</span>
+</div>
+</div>
+</div>
+<!-- Jenjang Spectrum Quick Selector Bar -->
+<div class="px-gutter pb-2.5 pt-0.5 flex items-center gap-1.5 overflow-x-auto no-scrollbar">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider shrink-0 mr-1 font-bold">Jenjang:</span>
+<button class="px-2.5 py-1 rounded-full text-xs font-semibold whitespace-nowrap bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors">KB / TK</button>
+<button class="px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap bg-primary text-on-primary shadow-sm flex items-center gap-1 transition-colors">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span>
+<span>SD</span>
+</button>
+<button class="px-2.5 py-1 rounded-full text-xs font-semibold whitespace-nowrap bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors">SMP</button>
+<button class="px-2.5 py-1 rounded-full text-xs font-semibold whitespace-nowrap bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors">SMA / SMK</button>
+<button class="px-2.5 py-1 rounded-full text-xs font-semibold whitespace-nowrap bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors">Kuliah</button>
+</div>
+</header>
+<main class="flex flex-col relative w-full pt-[116px] pb-24 bg-surface min-h-screen">
+<div class="flex flex-col w-full px-margin pb-space-xl gap-space-lg">
+<!-- Section 1: Child Switcher & Academic Profile Banner -->
+<section class="flex flex-col gap-space-sm pt-space-xs">
+<!-- Parent Greeting & Switch Child Pill -->
+<div class="flex items-center justify-between bg-surface-container-lowest p-2.5 rounded-xl border border-surface-container shadow-sm">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="relative w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center font-bold text-secondary text-sm overflow-hidden shrink-0">
+        AR
+        <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-tertiary-fixed-dim rounded-full ring-1 ring-surface"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-sm text-primary font-bold truncate">Ananda Rayyan Pratama</span>
+<span class="material-symbols-outlined text-secondary text-base shrink-0">verified</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-body-sm text-[11px]">
+<span>Orang Tua: Ayah (Bayu)</span>
+<span>•</span>
+<span class="font-semibold text-secondary">SD Kelas 4-B</span>
+</div>
+</div>
+</div>
+<!-- Switch Child Button -->
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-primary font-label-sm text-[11px] font-bold flex items-center gap-1 border border-outline-variant/40 shrink-0 transition-all active:scale-95">
+<span class="material-symbols-outlined text-[15px] text-secondary">swap_horiz</span>
+<span>Ganti Anak</span>
+</button>
+</div>
+<!-- Section 2: Kartu Penempatan Kelas & Tahun Ajaran Baru -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-primary via-primary-container to-secondary p-space-md text-on-primary shadow-md">
+<div class="absolute -right-6 -bottom-6 w-36 h-36 rounded-full bg-white/5 blur-2xl pointer-events-none"></div>
+<div class="absolute top-2 right-4 w-20 h-20 rounded-full bg-secondary-fixed/10 blur-xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-3">
+<!-- Badge TA & Classroom Status -->
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container-lowest/15 backdrop-blur-md w-fit">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span>
+<span class="font-label-sm text-[11px] text-primary-fixed uppercase tracking-wider font-bold">Penempatan Kelas TA 2024/2025</span>
+</div>
+<h2 class="font-headline-md text-[21px] text-on-primary mt-1 font-bold">Masuk Kelas 4-B (Amanah)</h2>
+<p class="font-body-sm text-[12px] text-secondary-fixed flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[15px]">meeting_room</span>
+            Gedung Melati Lt. 2, Ruang 204
+          </p>
+</div>
+<!-- Digital Student Badge / Presensi Card -->
+<button class="flex flex-col items-center justify-center bg-surface-container-lowest/15 hover:bg-surface-container-lowest/25 active:scale-95 transition-all text-on-primary px-3 py-2 rounded-xl backdrop-blur-md shadow-sm border border-white/10" id="presensiBtn">
+<span class="material-symbols-outlined text-[24px]">qr_code_scanner</span>
+<span class="font-label-sm text-[10px] mt-0.5 font-bold">Kartu Pelajar</span>
+</button>
+</div>
+<!-- Detail Kelas: Kapasitas, Wali Kelas & Presensi -->
+<div class="grid grid-cols-3 gap-2 pt-2 bg-black/20 rounded-lg p-2.5 backdrop-blur-sm border border-white/5">
+<div class="flex flex-col items-center justify-center text-center">
+<span class="font-label-sm text-[10px] text-primary-fixed-dim">Wali Kelas</span>
+<p class="font-headline-sm text-xs font-bold text-on-primary truncate max-w-full mt-0.5">Bu Nurul, S.Pd</p>
+<span class="font-label-sm text-[9px] text-secondary-fixed">Guru Tematik</span>
+</div>
+<div class="flex flex-col items-center justify-center text-center border-x border-white/10">
+<span class="font-label-sm text-[10px] text-primary-fixed-dim">Kapasitas Kelas</span>
+<div class="flex items-baseline gap-0.5 mt-0.5">
+<span class="font-headline-sm text-sm font-bold text-on-primary">28</span>
+<span class="font-label-sm text-[10px] text-primary-fixed-dim">/ 30 Siswa</span>
+</div>
+<span class="font-label-sm text-[9px] text-tertiary-fixed">Kondusif</span>
+</div>
+<div class="flex flex-col items-center justify-center text-center">
+<span class="font-label-sm text-[10px] text-primary-fixed-dim">Kehadiran Bulan Ini</span>
+<div class="flex items-baseline gap-0.5 mt-0.5">
+<span class="font-headline-sm text-sm font-bold text-tertiary-fixed">98.2%</span>
+</div>
+<span class="font-label-sm text-[9px] text-secondary-fixed">1 Sakit • 0 Alpa</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Menu Layanan Terintegrasi (8 Fitur Spektrum Edukasi) -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-primary">Layanan Akademik &amp; Sekolah</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Lengkap &amp; Resmi</span>
+</div>
+<div class="grid grid-cols-4 gap-2.5">
+<!-- Item 1: Penempatan Kelas -->
+<a class="flex flex-col items-center text-center p-2.5 rounded-xl bg-surface-container-lowest hover:bg-surface-container transition-all active:scale-95 shadow-sm group border border-surface-container" href="#">
+<div class="w-11 h-11 rounded-xl bg-secondary-fixed flex items-center justify-center text-secondary mb-1.5 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[22px]">badge</span>
+</div>
+<span class="font-label-sm text-[11px] font-semibold text-on-surface leading-tight">Penempatan Kelas</span>
+</a>
+<!-- Item 2: Progres Belajar -->
+<a class="relative flex flex-col items-center text-center p-2.5 rounded-xl bg-surface-container-lowest hover:bg-surface-container transition-all active:scale-95 shadow-sm group border border-surface-container" href="#">
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full ring-2 ring-surface-container-lowest"></span>
+<div class="w-11 h-11 rounded-xl bg-error-container/60 flex items-center justify-center text-error mb-1.5 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[22px]">analytics</span>
+</div>
+<span class="font-label-sm text-[11px] font-semibold text-on-surface leading-tight">Progres Belajar</span>
+</a>
+<!-- Item 3: SPP & Tagihan -->
+<a class="flex flex-col items-center text-center p-2.5 rounded-xl bg-surface-container-lowest hover:bg-surface-container transition-all active:scale-95 shadow-sm group border border-surface-container" href="#">
+<div class="w-11 h-11 rounded-xl bg-primary-fixed flex items-center justify-center text-primary mb-1.5 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[22px]">account_balance_wallet</span>
+</div>
+<span class="font-label-sm text-[11px] font-semibold text-on-surface leading-tight">SPP &amp; Biaya</span>
+</a>
+<!-- Item 4: Event Sekolah -->
+<a class="flex flex-col items-center text-center p-2.5 rounded-xl bg-surface-container-lowest hover:bg-surface-container transition-all active:scale-95 shadow-sm group border border-surface-container" href="#">
+<div class="w-11 h-11 rounded-xl bg-tertiary-fixed/40 flex items-center justify-center text-on-tertiary-container mb-1.5 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[22px]">festival</span>
+</div>
+<span class="font-label-sm text-[11px] font-semibold text-on-surface leading-tight">Event Sekolah</span>
+</a>
+<!-- Item 5: Guru & Wali Kelas -->
+<a class="flex flex-col items-center text-center p-2.5 rounded-xl bg-surface-container-lowest hover:bg-surface-container transition-all active:scale-95 shadow-sm group border border-surface-container" href="#">
+<div class="w-11 h-11 rounded-xl bg-surface-container-high flex items-center justify-center text-primary mb-1.5 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[22px]">supervisor_account</span>
+</div>
+<span class="font-label-sm text-[11px] font-semibold text-on-surface leading-tight">Wali &amp; Guru</span>
+</a>
+<!-- Item 6: Presensi Harian -->
+<a class="flex flex-col items-center text-center p-2.5 rounded-xl bg-surface-container-lowest hover:bg-surface-container transition-all active:scale-95 shadow-sm group border border-surface-container" href="#">
+<div class="w-11 h-11 rounded-xl bg-secondary-fixed flex items-center justify-center text-secondary mb-1.5 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[22px]">fact_check</span>
+</div>
+<span class="font-label-sm text-[11px] font-semibold text-on-surface leading-tight">Presensi</span>
+</a>
+<!-- Item 7: Bimbingan & Konseling -->
+<a class="flex flex-col items-center text-center p-2.5 rounded-xl bg-surface-container-lowest hover:bg-surface-container transition-all active:scale-95 shadow-sm group border border-surface-container" href="#">
+<div class="w-11 h-11 rounded-xl bg-tertiary-fixed/40 flex items-center justify-center text-on-tertiary-fixed-variant mb-1.5 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[22px]">support_agent</span>
+</div>
+<span class="font-label-sm text-[11px] font-semibold text-on-surface leading-tight">Konseling</span>
+</a>
+<!-- Item 8: Rapor Digital -->
+<a class="flex flex-col items-center text-center p-2.5 rounded-xl bg-surface-container-lowest hover:bg-surface-container transition-all active:scale-95 shadow-sm group border border-surface-container" href="#">
+<div class="w-11 h-11 rounded-xl bg-primary-fixed flex items-center justify-center text-primary mb-1.5 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[22px]">assignment_turned_in</span>
+</div>
+<span class="font-label-sm text-[11px] font-semibold text-on-surface leading-tight">Buku Rapor</span>
+</a>
+</div>
+</section>
+<!-- Section 4: Laporan & Diagnostik Proses Belajar (Materi Belum/Kurang Dipahami) -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-xl">psychology</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Proses &amp; Pemahaman Belajar</h3>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold hover:underline cursor-pointer">Laporan Guru</span>
+</div>
+<!-- Overview Pemahaman Card -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest border border-surface-container shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-base">insights</span>
+</div>
+<div>
+<h4 class="font-label-lg text-sm text-primary font-bold">Diagnostik Pekan Ini</h4>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Update harian oleh Tim Guru Tematik</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-base font-bold text-secondary">82%</span>
+<p class="font-label-sm text-[10px] text-on-surface-variant">Materi Dikuasai</p>
+</div>
+</div>
+<!-- Progress bar -->
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-gradient-to-r from-secondary to-tertiary-container rounded-full" style="width: 82%"></div>
+</div>
+<!-- Alert Materi yang Belum / Kurang Dipahami -->
+<div class="flex flex-col gap-2 pt-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-[11px] uppercase font-bold text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">warning</span>
+          Materi Perlu Pendampingan Tambahan
+        </span>
+<span class="font-label-sm text-[10px] px-2 py-0.5 rounded-full bg-error-container text-error font-semibold">2 Topik</span>
+</div>
+<!-- Item Diagnostik 1 -->
+<div class="p-2.5 rounded-lg bg-error-container/20 border border-error-container/60 flex flex-col gap-1.5">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-error text-[18px] mt-0.5">calculate</span>
+<div>
+<p class="font-label-md text-xs font-bold text-primary">Pecahan Campuran &amp; FPB/KPK (Matematika)</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant mt-0.5">Perlu remedial hitungan bertingkat. Siswa masih bingung menyamakan penyebut.</p>
+</div>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-error text-on-error font-label-sm text-[9px] font-bold shrink-0">Remedial</span>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-error-container/40 mt-0.5">
+<span class="font-body-sm text-[11px] text-error flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-sm">schedule</span> Sesi Bimbingan: Kamis, 14:00 WIB
+          </span>
+<button class="font-label-sm text-[11px] text-secondary font-bold hover:underline flex items-center">
+            Hubungi Guru <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Item Diagnostik 2 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low border border-surface-container flex flex-col gap-1.5">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">public</span>
+<div>
+<p class="font-label-md text-xs font-bold text-primary">Rotasi Bumi &amp; Tata Surya (IPA Tematik)</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant mt-0.5">Pemahaman konsep fase bulan masih kurang lengkap pada kuis formatif.</p>
+</div>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-[9px] font-semibold shrink-0">Review</span>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-surface-container mt-0.5">
+<span class="font-body-sm text-[11px] text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary">smart_display</span> Modul Video Interaktif Tersedia
+          </span>
+<button class="font-label-sm text-[11px] text-secondary font-bold hover:underline">Buka Materi</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Status SPP & Keuangan Sekolah Sesuai Persetujuan Dewan Pembina -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-xl">payments</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">SPP &amp; Iuran Sekolah</h3>
+</div>
+<span class="font-label-sm text-[10px] px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-container font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">verified_user</span> Transparan
+    </span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest border border-surface-container shadow-sm flex flex-col gap-3">
+<!-- Notice Dewan Pembina Sekolah -->
+<div class="flex items-center justify-between pb-2 border-b border-surface-container text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-secondary">gavel</span>
+<span class="font-label-sm text-[11px]">Resmi Dewan Pembina &amp; Komite Sekolah TA 24/25</span>
+</div>
+<span class="material-symbols-outlined text-xs text-outline cursor-pointer" title="Info Akuntabilitas">info</span>
+</div>
+<!-- SPP Amount and Status -->
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tagihan SPP Bulan Ini (Oktober 2024)</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-md text-xl font-bold text-primary">Rp 450.000</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">/ bulan</span>
+</div>
+<p class="font-body-sm text-[11px] text-error flex items-center gap-1 mt-1 font-medium">
+<span class="material-symbols-outlined text-xs">event</span> Jatuh Tempo: 10 Oktober 2024 (3 hari lagi)
+        </p>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-error-container text-error font-label-sm text-[11px] font-bold">
+        Belum Lunas
+      </span>
+</div>
+<!-- Rincian Terakreditasi Tagihan -->
+<div class="bg-surface-container-low rounded-lg p-2.5 flex flex-col gap-1 text-[11px] font-body-sm text-on-surface-variant">
+<div class="flex justify-between">
+<span>• SPP Pembelajaran Kurikulum Nasional:</span>
+<span class="font-semibold text-primary">Rp 350.000</span>
+</div>
+<div class="flex justify-between">
+<span>• Praktikum Lab Komputer &amp; Robotik:</span>
+<span class="font-semibold text-primary">Rp 60.000</span>
+</div>
+<div class="flex justify-between">
+<span>• Iuran Perpustakaan &amp; Literasi Digital:</span>
+<span class="font-semibold text-primary">Rp 40.000</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2 pt-1">
+<button class="flex-1 py-2 px-3 rounded-lg bg-secondary text-on-secondary font-label-md text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm">payment</span>
+<span>Bayar Sekarang (Virtual Account/Qris)</span>
+</button>
+<button class="py-2 px-3 rounded-lg bg-surface-container hover:bg-surface-variant text-primary font-label-md text-xs font-semibold flex items-center justify-center gap-1 active:scale-95 transition-transform" title="Riwayat Pembayaran">
+<span class="material-symbols-outlined text-sm">receipt_long</span>
+<span>Riwayat</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Section 6: Agenda & Event Sekolah / Kampus yang Akan Datang -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-xl">event_available</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Event &amp; Agenda Sekolah</h3>
+</div>
+<a class="font-label-md text-xs text-secondary hover:underline flex items-center" href="#">
+      Semua Agenda <span class="material-symbols-outlined text-xs">chevron_right</span>
+</a>
+</div>
+<div class="flex flex-col gap-2.5">
+<!-- Event 1: Pentas Seni & Kreasi Siswa -->
+<div class="flex gap-3 p-3 rounded-xl bg-surface-container-lowest border border-surface-container shadow-sm hover:shadow-md transition-shadow">
+<div class="w-14 h-16 rounded-lg bg-secondary-fixed text-secondary flex flex-col items-center justify-center shrink-0">
+<span class="font-label-sm text-[10px] uppercase font-bold tracking-wider">Sabtu</span>
+<span class="font-headline-md text-lg font-bold leading-none mt-0.5">12</span>
+<span class="font-label-sm text-[9px] uppercase font-semibold">Okt</span>
+</div>
+<div class="flex flex-col justify-between flex-1 min-w-0">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.2 rounded bg-tertiary-fixed text-on-tertiary-container font-label-sm text-[9px] font-bold">Wajib Hadir Orang Tua</span>
+<span class="font-body-sm text-[10px] text-on-surface-variant">08:00 - 12:30 WIB</span>
+</div>
+<h4 class="font-label-lg text-xs font-bold text-primary mt-1 line-clamp-1">Pentas Seni &amp; Kreasi Bakat Siswa Semester Ganjil</h4>
+<p class="font-body-sm text-[11px] text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-xs text-secondary">location_on</span>
+            Auditorium Utama Lantai 3
+          </p>
+</div>
+</div>
+</div>
+<!-- Event 2: Parent-Teacher Meeting (PTM) -->
+<div class="flex gap-3 p-3 rounded-xl bg-surface-container-lowest border border-surface-container shadow-sm hover:shadow-md transition-shadow">
+<div class="w-14 h-16 rounded-lg bg-surface-container-high text-primary flex flex-col items-center justify-center shrink-0">
+<span class="font-label-sm text-[10px] uppercase font-bold tracking-wider">Jumat</span>
+<span class="font-headline-md text-lg font-bold leading-none mt-0.5">25</span>
+<span class="font-label-sm text-[9px] uppercase font-semibold">Okt</span>
+</div>
+<div class="flex flex-col justify-between flex-1 min-w-0">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.2 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-[9px] font-bold">Evaluasi Tengah Semester</span>
+<span class="font-body-sm text-[10px] text-on-surface-variant">09:00 - 11:30 WIB</span>
+</div>
+<h4 class="font-label-lg text-xs font-bold text-primary mt-1 line-clamp-1">Parent-Teacher Meeting &amp; Konsultasi Rapor PTS</h4>
+<p class="font-body-sm text-[11px] text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-xs text-secondary">meeting_room</span>
+            Ruang Kelas 4-B &amp; Aula Konseling
+          </p>
+</div>
+</div>
+</div>
+<!-- Event 3: Study Tour Edukasi Museum -->
+<div class="flex gap-3 p-3 rounded-xl bg-surface-container-lowest border border-surface-container shadow-sm hover:shadow-md transition-shadow">
+<div class="w-14 h-16 rounded-lg bg-surface-container-high text-primary flex flex-col items-center justify-center shrink-0">
+<span class="font-label-sm text-[10px] uppercase font-bold tracking-wider">Kamis</span>
+<span class="font-headline-md text-lg font-bold leading-none mt-0.5">07</span>
+<span class="font-label-sm text-[9px] uppercase font-semibold">Nov</span>
+</div>
+<div class="flex flex-col justify-between flex-1 min-w-0">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.2 rounded bg-tertiary-fixed/50 text-on-tertiary-fixed-variant font-label-sm text-[9px] font-bold">Field Trip</span>
+<span class="font-body-sm text-[10px] text-on-surface-variant">07:00 - 15:00 WIB</span>
+</div>
+<h4 class="font-label-lg text-xs font-bold text-primary mt-1 line-clamp-1">Study Tour Edukasi: Museum Sains &amp; Teknologi</h4>
+<p class="font-body-sm text-[11px] text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-xs text-secondary">directions_bus</span>
+            Pusat Peragaan IPTEK TMII
+          </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Simple Presensi interaction feedback
+  const presensiBtn = document.getElementById('presensiBtn');
+  if (presensiBtn) {
+    presensiBtn.addEventListener('click', () => {
+      const originalHTML = presensiBtn.innerHTML;
+      presensiBtn.innerHTML = '<span class="material-symbols-outlined text-[24px] animate-spin">sync</span><span class="font-label-sm text-[10px] mt-0.5">Memuat ID</span>';
+      setTimeout(() => {
+        presensiBtn.innerHTML = '<span class="material-symbols-outlined text-[24px] text-tertiary-fixed">badge</span><span class="font-label-sm text-[10px] mt-0.5 text-tertiary-fixed">Siap</span>';
+        setTimeout(() => {
+          presensiBtn.innerHTML = originalHTML;
+        }, 1800);
+      }, 700);
+    });
+  }
+</script>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl border-t border-surface-container-high/60 shadow-[0_-4px_20px_rgba(27,37,89,0.06)]" data-active-classes="text-secondary font-bold">
+<div class="flex justify-around items-center h-16 px-space-xs max-w-md mx-auto">
+<a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 w-16 h-12 rounded-lg transition-colors text-secondary font-bold" data-path="beranda" href="#">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="font-label-sm text-[11px]">Beranda</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-0.5 w-16 h-12 rounded-lg text-on-surface-variant hover:text-secondary transition-colors" data-path="proses-belajar" href="#">
+<span class="material-symbols-outlined text-[22px]">auto_stories</span>
+<span class="font-label-sm text-[11px]">Belajar</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-0.5 w-16 h-12 rounded-lg text-on-surface-variant hover:text-secondary transition-colors" data-path="tagihan-spp" href="#">
+<span class="material-symbols-outlined text-[22px]">account_balance_wallet</span>
+<span class="font-label-sm text-[11px]">Keuangan</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-0.5 w-16 h-12 rounded-lg text-on-surface-variant hover:text-secondary transition-colors" data-path="event-agenda" href="#">
+<span class="material-symbols-outlined text-[22px]">event_note</span>
+<span class="font-label-sm text-[11px]">Agenda</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-0.5 w-16 h-12 rounded-lg text-on-surface-variant hover:text-secondary transition-colors" data-path="profil-keluarga" href="#">
+<span class="material-symbols-outlined text-[22px]">family_restroom</span>
+<span class="font-label-sm text-[11px]">Profil</span>
+</a>
+</div>
+</nav>
+</body></html>
